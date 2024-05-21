@@ -64,6 +64,7 @@ $lista_configuraciones=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                         <li class="nav-item"><a class="nav-link" href="#about">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Miembros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/website/admin/">Administrador</a></li>
                     </ul>
                 </div>
             </div>
