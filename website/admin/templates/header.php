@@ -1,11 +1,29 @@
 <?php
 session_start();
-$url_base="http://localhost/website/admin/";
 
-if(!isset($_SESSION['usuario'])){
-    header("Location:".$url_base."login.php");
+// Detectar automáticamente el protocolo
+$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+
+// Obtener el host
+$host = $_SERVER['HTTP_HOST'];
+
+// Obtener el URI base
+$uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+
+// Construir la URL base
+$url_base = $protocol . $host . "/website/admin/";
+
+// Si estamos en localhost, se ajusta la URL base si es necesario
+if ($host == 'localhost') {
+    $url_base = $protocol . $host . "/website/admin/";
+}
+
+if (!isset($_SESSION['usuario'])) {
+    header("Location:" . $url_base . "login.php");
+    exit(); // Asegurarse de detener la ejecución después de la redirección
 }
 ?>
+
 
 <!doctype html>
 <html lang="en">

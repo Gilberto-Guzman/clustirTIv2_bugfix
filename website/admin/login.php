@@ -8,20 +8,27 @@ if ($_POST) {
     $usuario = (isset($_POST['usuario'])) ? $_POST['usuario'] : "";
     $password = (isset($_POST['password'])) ? $_POST['password'] : "";
 
-    $sentencia = $conexion->prepare("SELECT *, count(*) as n_usuario 
-                                     FROM `usuarios`
-                                     WHERE usuario=:usuario AND password=:password");
-    $sentencia->bindParam(":usuario", $usuario);
-    $sentencia->bindParam(":password", $password);
-    $sentencia->execute();
-    $lista_usuarios = $sentencia->fetch(PDO::FETCH_LAZY);
+    // Obtener el usuario de la base de datos
+    $query = $conexion->prepare("SELECT * FROM `usuarios` WHERE `usuario` = :usuario");
+    $query->bindParam(":usuario", $usuario);
+    $query->execute();
+    $usuario_encontrado = $query->fetch(PDO::FETCH_ASSOC);
 
-    if ($lista_usuarios['n_usuario'] > 0) {
-        $_SESSION["usuario"] = $lista_usuarios['usuario'];
-        $_SESSION["logueado"] = true;
-        header("Location:index.php");
+    if ($usuario_encontrado) {
+        // Verificar la contraseña
+        if (password_verify($password, $usuario_encontrado['password'])) {
+            // Iniciar sesión
+            $_SESSION["usuario"] = $usuario_encontrado['usuario'];
+            $_SESSION["logueado"] = true;
+            header("Location: index.php");
+            exit();
+        } else {
+            // Contraseña incorrecta
+            $mensaje = "Error: Usuario o contraseña incorrectos!";
+        }
     } else {
-        $mensaje = "Error: Usuario o Password incorrectos!";
+        // El usuario no existe
+        $mensaje = "Error: Usuario o contraseña incorrectos!";
     }
 }
 ?>
