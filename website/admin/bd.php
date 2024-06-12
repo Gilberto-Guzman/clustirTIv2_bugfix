@@ -1,9 +1,9 @@
 <?php
 
-$servidor="localhost:3308";
-$baseDatos="clusterti";
+$servidor="localhost:3306";
+$baseDatos="clusterdb";
 $usuario="root";
-$contrasenia='';
+$contrasenia='203467';
 
 try{
     $conexion=new PDO("mysql:host=$servidor;dbname=$baseDatos", $usuario,$contrasenia);

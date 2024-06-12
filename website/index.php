@@ -60,11 +60,11 @@ $lista_configuraciones=$sentencia->fetchAll(PDO::FETCH_ASSOC);
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portafolio</a></li>
                         <li class="nav-item"><a class="nav-link" href="#about">Eventos</a></li>
                         <li class="nav-item"><a class="nav-link" href="#team">Miembros</a></li>
                         <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/website/admin/">Administrador</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/admin/">Administrador</a></li>
                     </ul>
                 </div>
             </div>

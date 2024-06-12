@@ -8,14 +8,14 @@ $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVE
 $host = $_SERVER['HTTP_HOST'];
 
 // Obtener el URI base
-$uri = rtrim(dirname($_SERVER['PHP_SELF']), '/\\');
+$uri = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
 
 // Construir la URL base
-$url_base = $protocol . $host . "/website/admin/";
+$url_base = $protocol . $host . "/admin/";
 
 // Si estamos en localhost, se ajusta la URL base si es necesario
 if ($host == 'localhost') {
-    $url_base = $protocol . $host . "/website/admin/";
+    $url_base = $protocol . $host . "/admin/";
 }
 
 if (!isset($_SESSION['usuario'])) {

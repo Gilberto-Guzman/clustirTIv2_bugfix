@@ -77,6 +77,9 @@ if ($_POST) {
                             </div>
                             <input name="" id="" class="btn btn-primary" type="submit" value="Entrar" />
                         </form>
+                        <div class="mt-3">
+                            <a href="solicitar_restauracion.php">¿Olvidaste tu contraseña?</a>
+                        </div>
                     </div>
                     <div class="card-footer text-muted"></div>
                 </div>

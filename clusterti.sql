@@ -1,259 +1,218 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
+CREATE DATABASE  IF NOT EXISTS `clusterti` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `clusterti`;
+-- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Servidor: localhost:3308
--- Tiempo de generación: 21-05-2024 a las 06:12:13
--- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.2.12
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: clusterti
+-- ------------------------------------------------------
+-- Server version	8.0.28
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!50503 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Base de datos: `clusterti`
+-- Table structure for table `configuraciones`
 --
 
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `configuraciones`
---
-
+DROP TABLE IF EXISTS `configuraciones`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `configuraciones` (
-  `id` int(11) NOT NULL,
-  `nombreconfig` varchar(255) NOT NULL,
-  `valor` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `nombreconfig` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `valor` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `configuraciones`
+-- Dumping data for table `configuraciones`
 --
 
-INSERT INTO `configuraciones` (`id`, `nombreconfig`, `valor`) VALUES
-(1, 'Bienvenida', 'Bienvenid@ a Cluster TI Chiapas'),
-(3, 'bienvenida_secundaria', 'Creando Alianzas, Innovando Ideas'),
-(4, 'boton_bienvenida', 'Empezar'),
-(5, 'link_boton_principal', '#services'),
-(6, 'titulo-servicios', 'SERVICIOS'),
-(7, 'descripcion-servicios', 'Lorem ipsum dolor sit amet consectetur.'),
-(8, 'titulo-portafolio', 'PORTFOLIO'),
-(9, 'descripcion-portafolio', 'Lorem ipsum dolor sit amet consectetur.'),
-(10, 'titulo-about', 'NOSOTROS'),
-(11, 'descripcion-about', 'Lorem ipsum dolor sit amet consectetur.'),
-(12, 'titulo-team', 'MIEMBROS'),
-(13, 'descripcion-team', 'Lorem ipsum dolor sit amet consectetur.'),
-(14, 'mensaje-miembros', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.'),
-(15, 'titulo-contacto', 'CONTACTANOS'),
-(16, 'descripcion-contacto', 'Lorem ipsum dolor sit amet consectetur.'),
-(17, 'link-twitter', 'https://x.com/ClusterTI'),
-(18, 'link-facebook', 'https://www.facebook.com/ClusterTIChiapas'),
-(19, 'link-linkedin', 'https://www.linkedin.com/in/cluster-ti-chiapas-a-c-14b54a112/?originalSubdomain=mx');
-
--- --------------------------------------------------------
+LOCK TABLES `configuraciones` WRITE;
+/*!40000 ALTER TABLE `configuraciones` DISABLE KEYS */;
+INSERT INTO `configuraciones` VALUES (1,'Bienvenida','Bienvenid@ a Cluster TI Chiapas'),(3,'bienvenida_secundaria','Creando Alianzas, Innovando Ideas'),(4,'boton_bienvenida','Empezar'),(5,'link_boton_principal','#services'),(6,'titulo-servicios','SERVICIOS'),(7,'descripcion-servicios','Lorem ipsum dolor sit amet consectetur.'),(8,'titulo-portafolio','PORTFOLIO'),(9,'descripcion-portafolio','Lorem ipsum dolor sit amet consectetur.'),(10,'titulo-about','NOSOTROS'),(11,'descripcion-about','Lorem ipsum dolor sit amet consectetur.'),(12,'titulo-team','MIEMBROS'),(13,'descripcion-team','Lorem ipsum dolor sit amet consectetur.'),(14,'mensaje-miembros','Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.'),(15,'titulo-contacto','CONTACTANOS'),(16,'descripcion-contacto','Lorem ipsum dolor sit amet consectetur.'),(17,'link-twitter','https://x.com/ClusterTI'),(18,'link-facebook','https://www.facebook.com/ClusterTIChiapas'),(19,'link-linkedin','https://www.linkedin.com/in/cluster-ti-chiapas-a-c-14b54a112/?originalSubdomain=mx');
+/*!40000 ALTER TABLE `configuraciones` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `entradas`
+-- Table structure for table `entradas`
 --
 
+DROP TABLE IF EXISTS `entradas`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `entradas` (
-  `id` int(11) NOT NULL,
-  `fecha` varchar(255) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  `imagen` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `fecha` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `titulo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `entradas`
+-- Dumping data for table `entradas`
 --
 
-INSERT INTO `entradas` (`id`, `fecha`, `titulo`, `descripcion`, `imagen`) VALUES
-(2, '2024-05-21', 'Creacion de Cluster ti', 'se juntaron varias empresas para propuesta del cluster ', '1716245307_78817511_2818217014897793_1498866594720251904_n.png'),
-(4, '2024-05-21', 'Logo', 'Creacion del logo ', '1716245112_326343995_1210229976270454_4966552485625561777_n.png');
-
--- --------------------------------------------------------
+LOCK TABLES `entradas` WRITE;
+/*!40000 ALTER TABLE `entradas` DISABLE KEYS */;
+INSERT INTO `entradas` VALUES (4,'2024-05-21','Logo','Creacion del logo ','1716245112_326343995_1210229976270454_4966552485625561777_n.png');
+/*!40000 ALTER TABLE `entradas` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `equipo`
+-- Table structure for table `equipo`
 --
 
+DROP TABLE IF EXISTS `equipo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `equipo` (
-  `id` int(11) NOT NULL,
-  `imagen` varchar(255) NOT NULL,
-  `nombrecompleto` varchar(255) NOT NULL,
-  `puesto` varchar(255) NOT NULL,
-  `twitter` varchar(255) NOT NULL,
-  `facebook` varchar(255) NOT NULL,
-  `linkedin` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `imagen` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `nombrecompleto` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `puesto` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `twitter` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `facebook` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `linkedin` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `equipo`
+-- Dumping data for table `equipo`
 --
 
-INSERT INTO `equipo` (`id`, `imagen`, `nombrecompleto`, `puesto`, `twitter`, `facebook`, `linkedin`) VALUES
-(1, '1716248185_imagen_2024-05-20_173220771.png', 'Raúl Paredes', 'CEO', 'https://x.com/RaulParedes', 'https://www.facebook.com/raul.paredes.773', 'https://www.linkedin.com/in/raul-paredes-47737339'),
-(2, '1716248267_326343995_1210229976270454_4966552485625561777_n.png', 'clusterTI', 'empresa', 'https://x.com/clustertituxtla', 'https://www.facebook.com/ClusterTIChiapas/', 'https://www.linkedin.com/in/clustertichiapas'),
-(4, '1716260798_3.jpg', 'Armando Hoyos Deprisa', 'Dev', '.https://x.com/ArmandoH', 'https://www.facebook.com/ArmandoH', 'https://www.linkedin.com/in/ArmandoH');
-
--- --------------------------------------------------------
+LOCK TABLES `equipo` WRITE;
+/*!40000 ALTER TABLE `equipo` DISABLE KEYS */;
+INSERT INTO `equipo` VALUES (2,'1716248267_326343995_1210229976270454_4966552485625561777_n.png','clusterTI','empresa','https://x.com/clustertituxtla','https://www.facebook.com/ClusterTIChiapas/','https://www.linkedin.com/in/clustertichiapas'),(4,'1716421011_descargar.jpeg','Member One ','Dev','.https://x.com/ArmandoH','https://www.facebook.com/ArmandoH','https://www.linkedin.com/in/ArmandoH');
+/*!40000 ALTER TABLE `equipo` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `portafolio`
+-- Table structure for table `eventos`
 --
 
+DROP TABLE IF EXISTS `eventos`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `eventos` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `title` varchar(1000) NOT NULL,
+  `content` varchar(6000) NOT NULL,
+  `cover` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `eventos`
+--
+
+LOCK TABLES `eventos` WRITE;
+/*!40000 ALTER TABLE `eventos` DISABLE KEYS */;
+/*!40000 ALTER TABLE `eventos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `portafolio`
+--
+
+DROP TABLE IF EXISTS `portafolio`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `portafolio` (
-  `id` int(11) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `subtitulo` varchar(255) NOT NULL,
-  `imagen` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL,
-  `cliente` varchar(255) NOT NULL,
-  `categoria` varchar(255) NOT NULL,
-  `url` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `subtitulo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `imagen` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `cliente` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `categoria` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `url` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `portafolio`
+-- Dumping data for table `portafolio`
 --
 
-INSERT INTO `portafolio` (`id`, `titulo`, `subtitulo`, `imagen`, `descripcion`, `cliente`, `categoria`, `url`) VALUES
-(7, 'Masivo XML', 'Pagina de Aterrizaje', '1716237648_Captura de pantalla 2024-05-20 141433.png', 'Landing page ', 'Masivo XML', 'web', 'www.masivoxml.com'),
-(8, 'PROJECT NAME', 'Lorem ipsum dolor sit amet consectetur.', '1716240238_1716237648_Captura de pantalla 2024-05-20 141433.png', 'Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum', 'Threads', ' Illustration', 'www.p.com'),
-(9, 'PROJECT NAME', 'Lorem ipsum dolor sit amet consectetur.', '1716240246_1716237648_Captura de pantalla 2024-05-20 141433.png', 'Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum', 'Finish', 'Identity', 'www.tigre.com');
-
--- --------------------------------------------------------
+LOCK TABLES `portafolio` WRITE;
+/*!40000 ALTER TABLE `portafolio` DISABLE KEYS */;
+INSERT INTO `portafolio` VALUES (7,'Masivo XML','Pagina de Aterrizaje','1716420971_header-bg.jpg','Landing page ','Masivo XML','web','www.masivoxml.com'),(8,'PROJECT NAME','Lorem ipsum dolor sit amet consectetur.','1716240238_1716237648_Captura de pantalla 2024-05-20 141433.png','Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum','Threads',' Illustration','www.p.com'),(10,'punto de venta','aplicacion escritorio','1716421812_header-bg.jpg','lkajsdljaslkdjlajsd asdjalksjdlajslkd jalsjdlajsdljasd','google','aplicacion de escritorio','www.google.com');
+/*!40000 ALTER TABLE `portafolio` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `servicios`
+-- Table structure for table `servicios`
 --
 
+DROP TABLE IF EXISTS `servicios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `servicios` (
-  `id` int(11) NOT NULL,
-  `icono` varchar(255) NOT NULL,
-  `titulo` varchar(255) NOT NULL,
-  `descripcion` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `icono` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `titulo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `descripcion` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `servicios`
+-- Dumping data for table `servicios`
 --
 
-INSERT INTO `servicios` (`id`, `icono`, `titulo`, `descripcion`) VALUES
-(6, 'fa-shopping-cart', 'Tutorias ', 'Tutorias sobre programación orientada a objetos'),
-(7, 'fa-laptop', 'Venta de Cursos', ' Cursos de programación'),
-(9, 'fa-lock', 'venta software', 'software a la medida'),
-(10, 'fa-book-open', 'Tutorias ', 'Tutorias sobre programacion orientada a servicios');
-
--- --------------------------------------------------------
+LOCK TABLES `servicios` WRITE;
+/*!40000 ALTER TABLE `servicios` DISABLE KEYS */;
+INSERT INTO `servicios` VALUES (6,'fa-shopping-cart','Tutorias ','Tutorias sobre programación orientada a objetos'),(7,'fa-book-open','Venta de Cursos',' Cursos de programación'),(9,'fa-lock','venta software','software a la medida'),(10,'fa-book-open','Tutorias ','Tutorias sobre programacion orientada a servicios');
+/*!40000 ALTER TABLE `servicios` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Table structure for table `usuarios`
 --
 
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuarios` (
-  `id` int(11) NOT NULL,
-  `usuario` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `correo` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `id` int NOT NULL AUTO_INCREMENT,
+  `usuario` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `correo` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
+  `token` varchar(32) COLLATE utf8mb4_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Dumping data for table `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `password`, `correo`) VALUES
-(1, 'test1', 'prueba1234', 'test@clusterti.com');
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
+INSERT INTO `usuarios` VALUES (7,'Admin','$2y$10$k3h.cK0yK83miqMpVF2hG.dSGW4Zs6zJIZymyoyvj4lRGgDYwe6OO','admin@clusterti.com','dd05ce4684f11e28d368966da84c2472'),(8,'Test2024','$2y$10$NjE2tXd2vv9NL2S4ykMNi.3k.P/g06wjSj1T/pAyh/XTtnaDWHbia','test@clusterti.com',NULL);
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
---
--- Índices para tablas volcadas
---
-
---
--- Indices de la tabla `configuraciones`
---
-ALTER TABLE `configuraciones`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `portafolio`
---
-ALTER TABLE `portafolio`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `servicios`
---
-ALTER TABLE `servicios`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indices de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT de las tablas volcadas
---
-
---
--- AUTO_INCREMENT de la tabla `configuraciones`
---
-ALTER TABLE `configuraciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
--- AUTO_INCREMENT de la tabla `entradas`
---
-ALTER TABLE `entradas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `equipo`
---
-ALTER TABLE `equipo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `portafolio`
---
-ALTER TABLE `portafolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
---
--- AUTO_INCREMENT de la tabla `servicios`
---
-ALTER TABLE `servicios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
-
---
--- AUTO_INCREMENT de la tabla `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-COMMIT;
-
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2024-06-12  6:56:16
