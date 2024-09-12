@@ -1,6 +1,6 @@
 <?php
 
-$servidor="localhost:3308";
+$servidor="localhost";
 $baseDatos="clusterti";
 $usuario="root";
 $contrasenia='';

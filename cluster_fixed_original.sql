@@ -202,7 +202,10 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-INSERT INTO `usuarios` VALUES (7,'Admin','$2y$10$k3h.cK0yK83miqMpVF2hG.dSGW4Zs6zJIZymyoyvj4lRGgDYwe6OO','admin@clusterti.com','dd05ce4684f11e28d368966da84c2472'),(8,'Test2024','$2y$10$NjE2tXd2vv9NL2S4ykMNi.3k.P/g06wjSj1T/pAyh/XTtnaDWHbia','test@clusterti.com',NULL);
+/* INSERT INTO `usuarios` VALUES (7,'Admin','$2y$10$k3h.cK0yK83miqMpVF2hG.dSGW4Zs6zJIZymyoyvj4lRGgDYwe6OO','admin@clusterti.com','dd05ce4684f11e28d368966da84c2472'),(8,'Test2024','$2y$10$NjE2tXd2vv9NL2S4ykMNi.3k.P/g06wjSj1T/pAyh/XTtnaDWHbia','test@clusterti.com',NULL); */
+
+INSERT INTO `usuarios` VALUES (7,'Admin','$2y$10$OLuyvN9Rw.BAGIIt/rGLOOhOvjyvxppWf4e9hJOOMHJtxIkpxLgaa','admin@clusterti.com','dd05ce4684f11e28d368966da84c2472'),(8,'Test2024','$2y$10$NjE2tXd2vv9NL2S4ykMNi.3k.P/g06wjSj1T/pAyh/XTtnaDWHbia','test@clusterti.com',NULL);
+
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
